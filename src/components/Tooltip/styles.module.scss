@@ -1,0 +1,77 @@
+@import '../../scss/variables.scss';
+
+.body:hover .tooltip_text {
+  visibility: visible;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.tooltip_text {
+  min-width: 80px;
+  visibility: hidden;
+  position: absolute;
+  z-index: 2;
+  white-space: nowrap;
+
+  line-height: 140%;
+
+  color: $text-light;
+  font-size: 12px;
+
+  padding: 6px 12px;
+  border-radius: 5px;
+  background-color: $bg-grey;
+
+  &:before {
+    content: '';
+    position: absolute;
+    transform: rotate(45deg);
+    background-color: $bg-grey;
+    padding: 5px;
+    z-index: 1;
+  }
+}
+
+.top {
+  top: -60px;
+  left: -60px;
+
+  &:before {
+    top: 80%;
+    left: 45%;
+  }
+}
+
+.right {
+  top: -25px;
+  left: 120%;
+
+  &:before {
+    top: 35%;
+    left: -2%;
+  }
+}
+
+.bottom {
+  top: 5px;
+  left: -60px;
+
+  &:before {
+    top: -5%;
+    left: 45%;
+  }
+}
+
+.left {
+  top: -25px;
+  right: 40px;
+
+  &:before {
+    top: 35%;
+    left: 94%;
+  }
+}
