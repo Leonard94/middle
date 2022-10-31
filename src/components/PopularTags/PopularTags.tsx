@@ -1,30 +1,34 @@
+import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
+
+import { getPopuladrTags } from '../../store/data/popularTags/PopularTagsSlice'
+import { useAppDispatch, useAppSelector } from '../../store/hooks'
+
 import styles from './styles.module.scss'
 
-// todo
-// Этот компонент должен запрашивать релевантные теги
-// По клику на тег - отправить на спец. страницу и показать список статей
-
 export const PopularTags = () => {
-  const tag = 'mock'
+  const dispatch = useAppDispatch()
+
+  const { tags, loading } = useAppSelector((state) => state.popularTags)
+
+  useEffect(() => {
+    dispatch(getPopuladrTags())
+  }, [])
+
   return (
     <div className={styles.body}>
       <p className={styles.title}>Популярные теги</p>
       <div className={styles.row}>
-        <a className={styles.tag} title={`Посмотреть статьи на тему ${tag}`}>
-          Programming
-        </a>
-        <a className={styles.tag} title={`Посмотреть статьи на тему ${tag}`}>
-          React
-        </a>
-        <a className={styles.tag} title={`Посмотреть статьи на тему ${tag}`}>
-          CSS
-        </a>
-        <a className={styles.tag} title={`Посмотреть статьи на тему ${tag}`}>
-          Programming
-        </a>
-        <a className={styles.tag} title={`Посмотреть статьи на тему ${tag}`}>
-          Computers
-        </a>
+        {loading === 'fulfilled' &&
+          tags.map((tag) => (
+            <Link
+              to={`/tag/${tag}`}
+              className={styles.tag}
+              title={`Посмотреть статьи на тему ${tag}`}
+            >
+              {tag}
+            </Link>
+          ))}
       </div>
     </div>
   )

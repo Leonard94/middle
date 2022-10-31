@@ -5,6 +5,7 @@ import articleDetail from './data/detailArticle/articleDetailSlice'
 import comments from './data/comments/commentsSlice'
 import popularArticles from './data/popularArticles/popularArticlesSlice'
 import recentArticles from './data/recentArticles/recentArticlesSlice'
+import popularTags from './data/popularTags/PopularTagsSlice'
 
 export const store = configureStore({
   reducer: {
@@ -13,6 +14,7 @@ export const store = configureStore({
     comments,
     popularArticles,
     recentArticles,
+    popularTags,
   },
 })
 
