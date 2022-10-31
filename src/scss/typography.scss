@@ -1,0 +1,72 @@
+@import '../scss/variables.scss';
+
+@mixin h1 {
+  font-family: 'Inter';
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 100%;
+  color: $text-main;
+}
+
+@mixin menu {
+  font-family: 'Inter';
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 100%;
+  color: $text-main;
+}
+
+@mixin btn-small {
+  font-family: 'Inter';
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 100%;
+  color: $text-light;
+}
+
+@mixin btn {
+  font-family: 'Inter';
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 100%;
+}
+
+@mixin title {
+  font-family: 'Georigia';
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 100%;
+  color: $text-main;
+}
+
+@mixin input {
+  font-family: 'Inter';
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 100%;
+  color: $text-main;
+}
+
+@mixin label {
+  font-family: 'Inter';
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  color: $text-second;
+}
+
+@mixin text {
+  font-family: 'Georgia';
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 140%;
+  color: $text-main;
+}
+
+@mixin comment {
+  font-family: 'Inter';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  color: $text-second;
+}

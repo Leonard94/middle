@@ -1,0 +1,35 @@
+@import '../../../../scss/variables.scss';
+
+.banner {
+  height: 400px;
+  background: $bg-accent;
+
+  background-image: url('../../../../assets/icons/pattern.svg');
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.body {
+  display: flex;
+  align-items: center;
+  height: 400px;
+}
+
+.title {
+  font-family: 'Georgia';
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 73px;
+  color: $text-main;
+
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-family: 'Inter';
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+
+  margin-bottom: 27px;
+}

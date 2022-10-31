@@ -1,0 +1,50 @@
+@import '../../../../scss/typography.scss';
+@import '../../../../scss/variables.scss';
+
+.body {
+  border: 1px solid #f0f0f0;
+  border-radius: 5px;
+
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+.text {
+  @include comment;
+
+  padding: 20px;
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 10px 20px;
+  background: #f5f5f5;
+
+  font-family: 'Inter';
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+
+  &_avatar {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &_username {
+    color: $text-main;
+  }
+
+  &_date {
+    color: $text-second;
+  }
+}

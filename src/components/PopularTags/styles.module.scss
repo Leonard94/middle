@@ -1,0 +1,35 @@
+@import '../../scss/variables.scss';
+
+.body {
+  max-width: 250px;
+}
+
+.title {
+  font-family: 'Inter';
+  font-weight: 400;
+  line-height: 100%;
+  color: $text-main;
+
+  margin-bottom: 12px;
+}
+
+.row {
+  font-size: 12px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.tag {
+  padding: 7px 20px;
+  border: 1px solid #d5d5d5;
+  border-radius: 15px;
+  
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    border-color: $bg-dark;
+  }
+}

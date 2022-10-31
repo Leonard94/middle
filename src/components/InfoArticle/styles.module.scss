@@ -1,0 +1,22 @@
+@import '../../scss/variables.scss';
+
+.info {
+  font-family: 'Inter';
+  font-weight: 200;
+  font-size: 12px;
+  line-height: 15px;
+  color: $text-second;
+
+  display: flex;
+  gap: 20px;
+}
+
+.tag {
+  padding: 1px 8px;
+  background: #f5f5f5;
+  border-radius: 13px;
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}

@@ -1,0 +1,85 @@
+.skeleton_article {
+  position: relative;
+  height: 440px;
+  background-color: #ffffff;
+  border-radius: 0px 0px 0px 0px;
+  background-image: linear-gradient(#f5f7f9 6px, transparent 0),
+    linear-gradient(#f5f7f9 6px, transparent 0),
+    linear-gradient(#f5f7f9 6px, transparent 0),
+    linear-gradient(#f5f7f9 6px, transparent 0),
+    linear-gradient(#f5f7f9 6px, transparent 0),
+    linear-gradient(#f5f7f9 6px, transparent 0),
+    linear-gradient(#f5f7f9 6px, transparent 0),
+    linear-gradient(#f5f7f9 6px, transparent 0),
+    linear-gradient(#f5f7f9 6px, transparent 0),
+    linear-gradient(#f5f7f9 6px, transparent 0),
+    linear-gradient(#f5f7f9 6px, transparent 0),
+    linear-gradient(#f5f7f9 6px, transparent 0),
+    linear-gradient(#f5f7f9 6px, transparent 0),
+    linear-gradient(#f5f7f9 15px, transparent 0),
+    linear-gradient(#f5f7f9 6px, transparent 0),
+    linear-gradient(#f5f7f9 6px, transparent 0),
+    radial-gradient(circle 20px at 20px 20px, #f5f7f9 99%, transparent 0);
+  background-repeat: repeat-y;
+  background-size: 690px 4400px, 600px 4400px, 690px 4400px, 690px 4400px,
+    550px 4400px, 690px 4400px, 690px 4400px, 690px 4400px, 600px 4400px,
+    690px 4400px, 690px 4400px, 30px 4400px, 690px 4400px, 600px 4400px,
+    30px 4400px, 100px 4400px, 40px 4400px;
+  background-position: 12px 365px, 12px 380px, 12px 350px, 12px 335px,
+    12px 285px, 12px 270px, 12px 255px, 12px 240px, 12px 195px, 12px 180px,
+    12px 165px, 108px 39px, 12px 150px, 12px 100px, 59px 39px, 59px 21px,
+    12px 12px;
+
+  &:before {
+    content: ' ';
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    height: 440px;
+    -webkit-mask-image: linear-gradient(
+      100deg,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0) 80%
+    );
+    -webkit-mask-repeat: repeat-y;
+    -webkit-mask-size: 50px 440px;
+    -webkit-mask-position: -20% 0;
+    background-image: linear-gradient(rgba(218, 218, 218, 1) 6px, transparent 0),
+      linear-gradient(rgba(218, 218, 218, 1) 6px, transparent 0),
+      linear-gradient(rgba(218, 218, 218, 1) 6px, transparent 0),
+      linear-gradient(rgba(218, 218, 218, 1) 6px, transparent 0),
+      linear-gradient(rgba(218, 218, 218, 1) 6px, transparent 0),
+      linear-gradient(rgba(218, 218, 218, 1) 6px, transparent 0),
+      linear-gradient(rgba(218, 218, 218, 1) 6px, transparent 0),
+      linear-gradient(rgba(218, 218, 218, 1) 6px, transparent 0),
+      linear-gradient(rgba(218, 218, 218, 1) 6px, transparent 0),
+      linear-gradient(rgba(218, 218, 218, 1) 6px, transparent 0),
+      linear-gradient(rgba(218, 218, 218, 1) 6px, transparent 0),
+      linear-gradient(rgba(218, 218, 218, 1) 6px, transparent 0),
+      linear-gradient(rgba(218, 218, 218, 1) 6px, transparent 0),
+      linear-gradient(rgba(218, 218, 218, 1) 15px, transparent 0),
+      linear-gradient(rgba(218, 218, 218, 1) 6px, transparent 0),
+      linear-gradient(rgba(218, 218, 218, 1) 6px, transparent 0),
+      radial-gradient(
+        circle 20px at 20px 20px,
+        rgba(218, 218, 218, 1) 99%,
+        transparent 0
+      );
+    background-repeat: repeat-y;
+    background-size: 690px 4400px, 600px 4400px, 690px 4400px, 690px 4400px,
+      550px 4400px, 690px 4400px, 690px 4400px, 690px 4400px, 600px 4400px,
+      690px 4400px, 690px 4400px, 30px 4400px, 690px 4400px, 600px 4400px,
+      30px 4400px, 100px 4400px, 40px 4400px;
+    background-position: 12px 365px, 12px 380px, 12px 350px, 12px 335px,
+      12px 285px, 12px 270px, 12px 255px, 12px 240px, 12px 195px, 12px 180px,
+      12px 165px, 108px 39px, 12px 150px, 12px 100px, 59px 39px, 59px 21px,
+      12px 12px;
+    animation: shineForSkeleton-qtg1g7pgxx2 2s infinite;
+  }
+}
+@keyframes shineForSkeleton-qtg1g7pgxx2 {
+  to {
+    -webkit-mask-position: 120% 0;
+  }
+}

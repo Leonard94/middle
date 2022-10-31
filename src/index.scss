@@ -1,0 +1,21 @@
+@import './scss/reset.scss';
+@import './scss/typography.scss';
+@import './assets/fonts/fonts.scss';
+
+body {
+  font-family: 'Inter';
+  font-style: normal;
+  position: relative;
+}
+
+.container {
+  max-width: 1208px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.title {
+  @include title;
+
+  margin-bottom: 30px;
+}

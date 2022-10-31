@@ -1,0 +1,32 @@
+@import '../../scss/variables.scss';
+
+.navigate {
+  width: 80px;
+}
+
+.inner {
+  padding-top: 50px;
+  max-width: 40px;
+  margin: 0 auto;
+
+  position: sticky;
+  top: 0;
+
+  li {
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    svg {
+      width: 100%;
+
+      &:hover {
+        path {
+          stroke: $bg-accent;
+        }
+      }
+    }
+  }
+}
