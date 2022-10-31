@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 
 import styles from './styles.module.scss'
 
+import Logo from '../../../../assets/icons/logo.svg'
+
 type TProps = {
   children: React.ReactNode
   title: string
@@ -10,6 +12,11 @@ type TProps = {
 export const AuthLayout: React.FC<TProps> = ({ children, title }) => {
   return (
     <div className={styles.login}>
+      <header className={styles.header}>
+        <Link to='/' className={styles.logo} title='На главную'>
+          <img src={Logo} alt='логотип middle' />
+        </Link>
+      </header>
       <div className={styles.container}>
         <div className={styles.body}>
           <div className={styles.left}>

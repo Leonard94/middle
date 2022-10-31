@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { useAppDispatch, useAppSelector } from '../../../../store/hooks'
 import { logout } from '../../../../store/data/user/userSlice'
@@ -20,18 +20,18 @@ export const HomeHeader = () => {
     <header className={styles.header}>
       <div className='container'>
         <div className={styles.body}>
-          <NavLink to='/' className={styles.logo} title='Вернуться на главную'>
+          <Link to='/' className={styles.logo} title='На главную'>
             <img src={Logo} alt='Логотип middle' />
-          </NavLink>
+          </Link>
           <nav>
             <ul className={styles.menu}>
               <li>
-                <NavLink to='recent'>Недавние</NavLink>
+                <Link to='recent'>Недавнее</Link>
               </li>
               {role === 'user' ? (
                 <>
                   <li>
-                    <NavLink to='/favorites'>Фавориты</NavLink>
+                    <Link to='/favorites'>Фавориты</Link>
                   </li>
                   <li>
                     <Button
@@ -47,7 +47,7 @@ export const HomeHeader = () => {
               ) : (
                 <>
                   <li>
-                    <NavLink to='register'>Регистрация</NavLink>
+                    <Link to='register'>Регистрация</Link>
                   </li>
                   <li>
                     <Button
