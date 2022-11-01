@@ -20,7 +20,7 @@ const initialState: TArticleState & TPages = {
   loading: 'pending',
   error: null,
   currentPage: 1,
-  maxPage: 1,
+  maxpage: 1,
 }
 
 export const popularArticles = createSlice({
@@ -28,7 +28,7 @@ export const popularArticles = createSlice({
   initialState,
   reducers: {
     setNextPage: (state) => {
-      if (state.currentPage !== state.maxPage) {
+      if (state.currentPage !== state.maxpage) {
         state.currentPage = state.currentPage + 1
       }
     },
@@ -50,7 +50,7 @@ export const popularArticles = createSlice({
     builder.addCase(getPopularArticles.fulfilled, (state, { payload }) => {
       state.articlesList = payload.articles
       state.loading = 'fulfilled'
-      state.maxPage = Math.ceil(payload.articlesCount / 10)
+      state.maxpage = Math.ceil(payload.articlesCount / 10)
     })
     builder.addCase(getPopularArticles.rejected, (state, { payload }: any) => {
       state.error = payload

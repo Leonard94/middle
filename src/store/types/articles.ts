@@ -31,5 +31,5 @@ export type TResponseArticles = {
 
 export type TPages = {
   currentPage: number
-  maxPage: number
+  maxpage: number
 }

@@ -30,3 +30,11 @@
     }
   }
 }
+
+.active {
+  svg {
+    path {
+      stroke: $bg-accent;
+    }
+  }
+}

@@ -20,7 +20,7 @@ export const Banner = () => {
             <Button
               typeView='primary'
               type='button'
-              onClick={() => navigate('/recent')}
+              onClick={() => navigate('/articles/recent')}
               small
             >
               Начать читать

@@ -4,10 +4,10 @@ import { Routes, Route } from 'react-router-dom'
 import { useAppDispatch } from '../../store/hooks'
 import { getUser } from '../../store/data/user/userSlice'
 
-import { HomePage } from '../../pages/HomePage/HomePage'
-import { RecentArticlesPage } from '../../pages/RecentArticlesPage/RecentArticlesPage'
 import { AuthPage } from '../../pages/AuthPage/AuthPage'
+import { HomePage } from '../../pages/HomePage/HomePage'
 import { DetailArticlePage } from '../../pages/DetailArticlePage/DetailArticlePage'
+import { ArticlesPage } from '../../pages/ArticlesPage/ArticlesPage'
 
 export const App = () => {
   const dispatch = useAppDispatch()
@@ -23,18 +23,16 @@ export const App = () => {
   return (
     <>
       <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/recent' element={<RecentArticlesPage />} />
         <Route path='/login' element={<AuthPage />} />
         <Route path='/register' element={<AuthPage />} />
+        
+        <Route path='/' element={<HomePage />} />
         <Route path='/article/:slug' element={<DetailArticlePage />} />
+        <Route path='/articles/:type' element={<ArticlesPage />} />
+        <Route path='/articles/:type/:tag' element={<ArticlesPage />} />
         <Route
           path='/createnewarticle'
-          element={<p>Извините, раздел в разработке 😊</p>}
-        />
-        <Route
-          path='/favorites'
-          element={<p>Извините, раздел в разработке 😐</p>}
+          element={<p>Извините, функционал в разработке 😊</p>}
         />
         <Route path='*' element={<p>Такой страницы не существует</p>} />
       </Routes>

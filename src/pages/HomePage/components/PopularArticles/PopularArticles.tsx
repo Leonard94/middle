@@ -15,7 +15,7 @@ import { Pagination } from '../../../../components/Pagination/Pagination'
 export const PopularArticles = () => {
   const dispatch = useAppDispatch()
 
-  const { articlesList, loading, currentPage, maxPage } = useAppSelector(
+  const { articlesList, loading, currentPage, maxpage } = useAppSelector(
     (state) => state.popularArticles
   )
 
@@ -33,10 +33,10 @@ export const PopularArticles = () => {
       <h2 className='title'>Популярное</h2>
       {loading === 'loading' && <Skeleton />}
       {loading === 'fulfilled' && <ArticlesList list={articlesList} />}
-      {loading === 'fulfilled' && maxPage > 1 && (
+      {loading === 'fulfilled' && maxpage > 1 && (
         <Pagination
           current={currentPage}
-          max={maxPage}
+          max={maxpage}
           next={() => dispatch(setNextPage())}
           prev={() => dispatch(setPrevPage())}
           setPage={(page: number) => dispatch(setCurrentPage(page))}

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 import { Tooltip } from '../Tooltip/Tooltip'
 
@@ -9,6 +9,8 @@ import { ReactComponent as IconCollection } from '../../assets/icons/collection.
 import styles from './styles.module.scss'
 
 export const Navigate = () => {
+  const setActive = ({ isActive }: any) => (isActive ? styles.active : '')
+
   return (
     <nav className={styles.navigate}>
       <ul className={styles.inner}>
@@ -21,16 +23,16 @@ export const Navigate = () => {
         </li>
         <li>
           <Tooltip title='Недавние'>
-            <Link to='/createnewarticle'>
+            <NavLink to='/articles/recent' className={setActive}>
               <IconRecent />
-            </Link>
+            </NavLink>
           </Tooltip>
         </li>
         <li>
           <Tooltip title='Фавориты'>
-            <Link to='/favorites'>
+            <NavLink to='/articles/favorites' className={setActive}>
               <IconCollection />
-            </Link>
+            </NavLink>
           </Tooltip>
         </li>
       </ul>

@@ -20,9 +20,10 @@ export const PopularTags = () => {
       <p className={styles.title}>Популярные теги</p>
       <div className={styles.row}>
         {loading === 'fulfilled' &&
-          tags.map((tag) => (
+          tags.map((tag, index) => (
             <Link
-              to={`/tag/${tag}`}
+              key={index}
+              to={`/articles/tag/${tag}`}
               className={styles.tag}
               title={`Посмотреть статьи на тему ${tag}`}
             >

@@ -23,18 +23,13 @@ const initialState: TPopularTagsInitial = {
 export const popularTags = createSlice({
   name: 'popularTags',
   initialState,
-  reducers: {
-    resetRecentArticles: () => {
-      return initialState
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getPopuladrTags.pending, (state) => {
       state.loading = 'loading'
       state.error = null
     })
     builder.addCase(getPopuladrTags.fulfilled, (state, { payload }) => {
-      console.log('payload =>> ', payload)
       state.loading = 'fulfilled'
       state.error = null
       state.tags = payload.tags
@@ -46,5 +41,4 @@ export const popularTags = createSlice({
   },
 })
 
-export const { resetRecentArticles } = popularTags.actions
 export default popularTags.reducer

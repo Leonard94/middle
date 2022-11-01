@@ -26,12 +26,12 @@ export const HomeHeader = () => {
           <nav>
             <ul className={styles.menu}>
               <li>
-                <Link to='recent'>Недавнее</Link>
+                <Link to='/articles/recent'>Недавнее</Link>
               </li>
               {role === 'user' ? (
                 <>
                   <li>
-                    <Link to='/favorites'>Фавориты</Link>
+                    <Link to='/articles/favorites'>Фавориты</Link>
                   </li>
                   <li>
                     <Button
