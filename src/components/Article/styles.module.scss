@@ -1,4 +1,5 @@
 @import '../../scss/variables.scss';
+@import '../../scss/typography.scss';
 
 .article {
   margin-bottom: 50px;
@@ -20,11 +21,7 @@
   }
 
   &_name {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 15px;
+    @include small-description;
   }
 }
 

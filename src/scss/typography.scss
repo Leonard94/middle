@@ -70,3 +70,12 @@
   line-height: 150%;
   color: $text-second;
 }
+
+@mixin small-description {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 15px;
+  color: $text-second;
+}

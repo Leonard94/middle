@@ -3,8 +3,6 @@ import { api } from '../../api'
 
 import { TArticleState, TResponseArticles, TPages } from '../../types'
 
-// Поправить типы в запросе?
-
 export const getRecentArticles = createAsyncThunk(
   'articles/getRecentArticles',
   async (_, { getState }) => {
