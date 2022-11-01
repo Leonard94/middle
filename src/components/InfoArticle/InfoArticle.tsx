@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { getFormattedDate } from '../../helpers/getFormattedDate/getFormattedDate'
 import { getReadingTime } from '../../helpers/getReadingTime/getReadingTime'
 import { Like } from '../Like/Like'
@@ -31,9 +32,13 @@ export const InfoArticle: React.FC<TProps> = ({
       <div>
         {tagList &&
           tagList.map((tag, index) => (
-            <span key={index} className={styles.tag}>
+            <Link
+              to={`/articles/tag/${tag}`}
+              key={index}
+              className={styles.tag}
+            >
               {tag}
-            </span>
+            </Link>
           ))}
       </div>
       <Like quantity={favoritesCount} favorited={favorited} slug={slug} />
