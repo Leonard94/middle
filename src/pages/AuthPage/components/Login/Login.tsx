@@ -1,16 +1,20 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { Input } from '../../../../components/Input/Input'
+import { ErrorMessage } from '../ErrorMessage/ErrorMessage'
 
-import { VALIDATE_ERRORS } from '../../../../global-constans'
 import { useAppDispatch } from '../../../../store/hooks'
 import { login } from '../../../../store/data/user/userSlice'
 
+import { VALIDATE_ERRORS } from '../../../../global-constans'
+
 type TPprops = {
   button: JSX.Element
+  error: string | null
+  handleResetError: () => void
 }
 
-export const Login: React.FC<TPprops> = ({ button }) => {
+export const Login: React.FC<TPprops> = ({ button, error, handleResetError }) => {
   const dispatch = useAppDispatch()
 
   const [values, setValues] = useState({
@@ -57,6 +61,12 @@ export const Login: React.FC<TPprops> = ({ button }) => {
     }
   }
 
+  useEffect(() => {
+    return () => {
+      handleResetError()
+    }
+  }, [])
+
   return (
     <form onSubmit={handleSubmit} noValidate>
       <Input
@@ -79,8 +89,9 @@ export const Login: React.FC<TPprops> = ({ button }) => {
         onChange={handleInput}
         error={errorPassword}
         onFocus={() => setErrorPassword(null)}
-        style={{ marginBottom: '40px' }}
+        style={{ marginBottom: '30px' }}
       />
+      <ErrorMessage error={error} />
       {button}
     </form>
   )

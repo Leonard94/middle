@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { useAppDispatch } from '../../../../store/hooks'
 import { createNewUser } from '../../../../store/data/user/userSlice'
 
 import { Input } from '../../../../components/Input/Input'
+import { ErrorMessage } from '../ErrorMessage/ErrorMessage'
 
 import { isValidEmail } from '../../../../helpers/isValidEmail/isValidEmail'
 import { isValidPassword } from '../../../../helpers/isValidPassword/isValidPassword'
@@ -12,9 +13,15 @@ import { isValidConfirmPassword } from '../../../../helpers/isValidConfirmPasswo
 
 type TPprops = {
   button: JSX.Element
+  error: string | null
+  handleResetError: () => void
 }
 
-export const Register: React.FC<TPprops> = ({ button }) => {
+export const Register: React.FC<TPprops> = ({
+  button,
+  error,
+  handleResetError,
+}) => {
   const dispatch = useAppDispatch()
 
   const [values, setValues] = useState({
@@ -65,6 +72,12 @@ export const Register: React.FC<TPprops> = ({ button }) => {
     }
   }
 
+  useEffect(() => {
+    return () => {
+      handleResetError()
+    }
+  })
+
   return (
     <form onSubmit={handleSubmit} noValidate>
       <Input
@@ -109,8 +122,9 @@ export const Register: React.FC<TPprops> = ({ button }) => {
         onChange={handleInput}
         error={errorConfirmPassword}
         onFocus={() => setErrorConfirmPassword(null)}
-        style={{ marginBottom: '40px' }}
+        style={{ marginBottom: '30px' }}
       />
+      <ErrorMessage error={error} />
       {button}
     </form>
   )

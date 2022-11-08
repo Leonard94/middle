@@ -10,24 +10,46 @@ import {
 
 export const createNewUser = createAsyncThunk(
   'user/createNewUser',
-  async (data: CreateNewUserData) => {
-    const response = await api.post<UserResponse>('/users', {
-      user: data,
-    })
-    return (await response.data) as UserResponse
+  async (data: CreateNewUserData, { rejectWithValue }) => {
+    try {
+      const response = await api.post<UserResponse>('/users', {
+        user: data,
+      })
+      return (await response.data) as UserResponse
+    } catch (error: any) {
+      const err = error.response.data.errors
+      if (err.username && err.email) {
+        throw rejectWithValue(
+          'Такое имя пользователя и электронная почта уже используются'
+        )
+      } else if (err.username) {
+        throw rejectWithValue('Это имя занято')
+      } else if (err.email) {
+        throw rejectWithValue('Эта электронная почта уже используется')
+      }
+      throw rejectWithValue('Что-то пошло не так, попробуйте позже')
+    }
   }
 )
 
 export const getUser = createAsyncThunk('user/getUser', async () => {
-  const response = await api.get<UserResponse>('/user')
-  return await response.data
+  try {
+    const response = await api.get<UserResponse>('/user')
+    return await response.data as UserResponse
+  } catch (error: any) {
+    throw error.response.status
+  }
 })
 
 export const login = createAsyncThunk('user/login', async (data: LoginData) => {
-  const response = await api.post<UserResponse>('/users/login', {
-    user: data,
-  })
-  return (await response.data) as UserResponse
+  try {
+    const response = await api.post<UserResponse>('/users/login', {
+      user: data,
+    })
+    return (await response.data) as UserResponse
+  } catch (error: any) {
+    throw error.response.status
+  }
 })
 
 const initialState: UserState = {
@@ -51,6 +73,9 @@ export const user = createSlice({
       localStorage.removeItem('Token')
       return initialState
     },
+    resetError: (state) => {
+      state.error = null
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(createNewUser.pending, (state) => {
@@ -70,6 +95,7 @@ export const user = createSlice({
     })
     builder.addCase(createNewUser.rejected, (state, { payload }: any) => {
       state.error = payload
+
       state.loading = 'fulfilled'
     })
 
@@ -88,26 +114,28 @@ export const user = createSlice({
       // Костыль. Исправить!
       api.setUserToken(`"${token}"`)
     })
-    builder.addCase(login.rejected, (state, { payload }: any) => {
-      console.log('payload error =>> ', payload)
+    builder.addCase(login.rejected, (state, { error }: any) => {
       state.loading = 'fulfilled'
-      state.error = payload
+      if (error.message === '403') {
+        state.error = 'Неверный логин или пароль'
+      } else {
+        state.error = 'Что-то пошло не так, попробуйте повторить попытку позже'
+      }
     })
 
-    builder.addCase(getUser.fulfilled, (state, { payload }) => {
+    builder.addCase(getUser.fulfilled, (state, {payload}) => {
       state.user = payload.user
       state.loading = 'fulfilled'
       state.role = 'user'
       state.error = null
     })
-    builder.addCase(getUser.rejected, (state, { payload }: any) => {
-      console.log('payload error getUser=>> ', payload)
+    builder.addCase(getUser.rejected, (state) => {
       state.loading = 'fulfilled'
       state.role = 'guest'
-      state.error = payload
+      localStorage.removeItem('Token')
     })
   },
 })
 
-export const { logout } = user.actions
+export const { logout, resetError } = user.actions
 export default user.reducer

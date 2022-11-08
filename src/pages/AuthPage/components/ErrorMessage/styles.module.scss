@@ -1,0 +1,10 @@
+@import '../../../../scss/typography.scss';
+@import '../../../../scss/variables.scss';
+
+.error {
+  @include label;
+  text-align: center;
+  color: $text-danger;
+
+  margin-bottom: 30px;
+}

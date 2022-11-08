@@ -32,12 +32,12 @@ export const api = {
         url,
         ...params,
       })
-      .then((resp) => {
-        return resp
-      })
-      .catch((err) => {
-        throw err
-      })
+      // .then((resp) => {
+      //   return resp
+      // })
+      // .catch((err) => {
+      //   throw err
+      // })
   },
 
   get: <T extends unknown>(
