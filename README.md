@@ -1,6 +1,9 @@
 <h1 align="center"><s>Medium</s> Middle</h1>
 </br>
 
+Упрощённая копия популярного сайта Medium.com </br>
+В качестве сервера используется [RealWorld API](https://github.com/nickpeihl/realworld-api/blob/master/README.md)
+
 
 ## 🚀 Затестить:
 
