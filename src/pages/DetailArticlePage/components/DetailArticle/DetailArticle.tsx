@@ -20,6 +20,11 @@ export const DetailArticle: React.FC<TProps> = ({ article }) => {
     favoritesCount,
     slug,
   } = article
+
+  const getFormatedText = (text: string) => {
+    return text.split('\\n').map((item, index) => <p key={index}>{item}</p>)
+  }
+
   return (
     <article className={styles.article}>
       <div className={styles.user}>
@@ -39,7 +44,7 @@ export const DetailArticle: React.FC<TProps> = ({ article }) => {
         </div>
       </div>
       <h1 className={styles.title}>{title}</h1>
-      <p className={styles.text}>{body}</p>
+      <div className={styles.text}>{getFormatedText(body)}</div>
       <Comments slug={slug} />
     </article>
   )

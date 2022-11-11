@@ -42,4 +42,8 @@
 .text {
   white-space: pre-line;
   @include text;
+
+  p:not(:last-child) {
+    margin-bottom: 15px;
+  }
 }
