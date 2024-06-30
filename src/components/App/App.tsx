@@ -21,7 +21,7 @@ export const App = () => {
   }, [dispatch])
 
   return (
-    <Router basename='/my-app'>
+    <Router basename='/middle'>
       <Routes>
         <Route path='/login' element={<AuthPage />} />
         <Route path='/register' element={<AuthPage />} />
