@@ -9,6 +9,8 @@ import { App } from './components/App/App'
 
 import './index.scss'
 
+console.log('process.env.PUBLIC_URL', process.env.PUBLIC_URL)
+
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   // <React.StrictMode>
