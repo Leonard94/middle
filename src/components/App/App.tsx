@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { useAppDispatch } from '../../store/hooks'
 import { getUser } from '../../store/data/user/userSlice'
@@ -21,11 +21,11 @@ export const App = () => {
   }, [dispatch])
 
   return (
-    <>
+    <Router basename='/my-app'>
       <Routes>
         <Route path='/login' element={<AuthPage />} />
         <Route path='/register' element={<AuthPage />} />
-        
+
         <Route path='/' element={<HomePage />} />
         <Route path='/article/:slug' element={<DetailArticlePage />} />
         <Route path='/articles/:type' element={<ArticlesPage />} />
@@ -36,6 +36,6 @@ export const App = () => {
         />
         <Route path='*' element={<p>Такой страницы не существует</p>} />
       </Routes>
-    </>
+    </Router>
   )
 }
