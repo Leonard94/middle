@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/middle/static/css/main.e41a67fa.css",
+    "main.js": "/middle/static/js/main.c13c61d6.js",
+    "static/media/Inter-Medium.ttf": "/middle/static/media/Inter-Medium.dd393062b69385ba1182.ttf",
+    "static/media/Inter-Bold.ttf": "/middle/static/media/Inter-Bold.5e603d4713ff938e1226.ttf",
+    "static/media/Inter-ExtraLight.ttf": "/middle/static/media/Inter-ExtraLight.168b2b1031115ae040ae.ttf",
+    "static/media/Inter-Light.ttf": "/middle/static/media/Inter-Light.3c3abaad5445db091bf0.ttf",
+    "static/media/Inter-Regular.ttf": "/middle/static/media/Inter-Regular.a689053e061b0e6438f7.ttf",
+    "static/media/Georgia.ttf": "/middle/static/media/Georgia.ded2a9c8c07345446ad5.ttf",
+    "static/media/Georgia-Bold.ttf": "/middle/static/media/Georgia-Bold.b03fec3351d6f3d97e78.ttf",
+    "static/media/Inter-ExtraLight.woff": "/middle/static/media/Inter-ExtraLight.f8fb7b16183c98e54acd.woff",
+    "static/media/Inter-Light.woff": "/middle/static/media/Inter-Light.ed9a7ce1dedab5d9333b.woff",
+    "static/media/Inter-Bold.woff": "/middle/static/media/Inter-Bold.1e547cd04bfe2dae1f98.woff",
+    "static/media/Inter-Medium.woff": "/middle/static/media/Inter-Medium.44e343ff76a98508d309.woff",
+    "static/media/Inter-Regular.woff": "/middle/static/media/Inter-Regular.0d6f7c99e635f1fec4c9.woff",
+    "static/media/Georgia.woff": "/middle/static/media/Georgia.4fa6bec13ea201f703e2.woff",
+    "static/media/Georgia-Bold.woff": "/middle/static/media/Georgia-Bold.c6fe2d5538b8df715e24.woff",
+    "static/media/bg-auth.jpg": "/middle/static/media/bg-auth.4e1647e946b6cceda243.jpg",
+    "static/media/Inter-ExtraLight.woff2": "/middle/static/media/Inter-ExtraLight.e0258aa9e48598c7f0e9.woff2",
+    "static/media/Inter-Light.woff2": "/middle/static/media/Inter-Light.85119f18c783bf6b0a9a.woff2",
+    "static/media/Inter-Bold.woff2": "/middle/static/media/Inter-Bold.c08e610806161507e8e3.woff2",
+    "static/media/Inter-Medium.woff2": "/middle/static/media/Inter-Medium.01f03178adde434fc9fa.woff2",
+    "static/media/Inter-Regular.woff2": "/middle/static/media/Inter-Regular.bd097ceff83f90802a12.woff2",
+    "static/media/Georgia.woff2": "/middle/static/media/Georgia.3c750001db0a6c17eb0a.woff2",
+    "static/media/Georgia-Bold.woff2": "/middle/static/media/Georgia-Bold.3fc24d368e768700b0a5.woff2",
+    "static/media/pattern.svg": "/middle/static/media/pattern.2a5aaa1414d2ca00a644.svg",
+    "static/media/logo.svg": "/middle/static/media/logo.e6a8da9d1e347e60e575583d4cfbbf48.svg",
+    "static/media/like.svg": "/middle/static/media/like.675b96e5df55fdb7690412282abec6b7.svg",
+    "index.html": "/middle/index.html",
+    "static/media/collection.svg": "/middle/static/media/collection.a2630c7930fe761a677e25afd0425775.svg",
+    "static/media/home.svg": "/middle/static/media/home.198a7c965e58db4d3ca83c106ad515a7.svg",
+    "static/media/recent.svg": "/middle/static/media/recent.0c68f737108d6258a3dc67654d5b774b.svg",
+    "static/media/line.svg": "/middle/static/media/line.d2fda47f759cc1e4e6bb20016413676f.svg",
+    "main.e41a67fa.css.map": "/middle/static/css/main.e41a67fa.css.map",
+    "main.c13c61d6.js.map": "/middle/static/js/main.c13c61d6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e41a67fa.css",
+    "static/js/main.c13c61d6.js"
+  ]
+}
